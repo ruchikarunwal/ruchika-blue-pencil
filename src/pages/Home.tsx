@@ -3,10 +3,12 @@ import designerImg from "../../public/designer_1.png";
 import imgThird from "../assets/img_3.jpg";
 import imgFourth from "../assets/img_4.jpg";
 import imgFifth from "../assets/img_5.jpg";
+import Rectangle from "../assets/Rectangle.jpg";
 import Button from "../components/Button";
 import NavBar from "../components/NavBar";
 import HomeSections from "../components/HomeSections";
 import DescriptionWithIcon from "../components/DescriptionWithIcon";
+import Footer from "../components/Footer";
 
 const homeSectionData = [
   {
@@ -24,7 +26,7 @@ const homeSectionData = [
     imgUrl: imgFifth,
     isImgAtStart: false,
     descriptionFooter: (
-      <div className="flex flex-col md:flex-row gap-6">
+      <div className="flex flex-col md:flex-row gap-6 mb-4">
         <DescriptionWithIcon
           title="Title Goes Here"
           description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. "
@@ -80,22 +82,9 @@ const homeSectionData = [
     ),
     imgUrl: imgFifth,
     isImgAtStart: true,
-  },
-  {
-    title: "Light, Fast & Powerful",
-    description: (
-      <p>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-        dis parturient montes, nascetur ridiculus <br />
-        <br />
-        mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
-        sem. Nulla consequat massa quis enim.
-      </p>
+    descriptionFooter: (
+      <Button btnLabel="Purchase Now" customTailwindStyle="mb-4" />
     ),
-    imgUrl: imgThird,
-    isImgAtStart: true,
-    descriptionFooter: <Button btnLabel="Purchase Now" />,
   },
 ];
 
@@ -122,7 +111,7 @@ const Home = () => {
               <Button btnLabel="Purchase UI Kit" />
               <Button
                 btnLabel="Learn More"
-                customTailwindStyle="bg-[white] text-blue-950 border-2"
+                customTailwindStyle="bg-[white] text-black border-2"
               />
             </div>
           </div>
@@ -146,6 +135,33 @@ const Home = () => {
           />
         );
       })}
+
+      {/* Purchase Section */}
+      <div
+        style={{
+          backgroundImage: `url(${Rectangle})`,
+        }}
+        className="flex flex-col h-dvh w-full object-cover items-center justify-center"
+      >
+        <p className="text-2xl md:text-3xl font-bold text-[#091133] my-3 mt-12">
+          A Price To Suit Everyone
+        </p>
+        <p className="text-[16px] text-center font-[400] text-[#6F7CB2] w-[80%] md:w-[38%]">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+          et magnis dis parturient montes, nascetur ridiculus
+        </p>
+        <p className="text-5xl mt-10 font-bold text-[#222F65] my-3">$40</p>
+        <p className="text-[16px] font-semibold text-[#37447E]">
+          UI Design Kit
+        </p>
+
+        <p className="mt-14 mb-2 text-[#5D6970]">See, One price. Simple.</p>
+        <Button btnLabel="Purchase Now" />
+      </div>
+
+      {/* Footer */}
+      <Footer />
     </>
   );
 };
