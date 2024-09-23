@@ -121,7 +121,12 @@ const Home = () => {
               pretium quis, sem. Nulla consequat massa quis enim.
             </p>
             <div className="flex gap-8">
-              <Button btnLabel="Purchase UI Kit" onClick={() => {}} />
+              <Button
+                btnLabel="Purchase UI Kit"
+                onClick={() => {
+                  navigate("/no-data");
+                }}
+              />
               <Button
                 btnLabel="Learn More"
                 customTailwindStyle="text-[black] bg-[white] border-2"
