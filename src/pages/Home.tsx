@@ -1,4 +1,4 @@
-import designerImg from "../../public/designer_1.png";
+import designerImg from "../assets/designer_1.png";
 import imgThird from "../assets/img_3.jpg";
 import imgFourth from "../assets/img_4.jpg";
 import imgFifth from "../assets/img_5.jpg";
@@ -98,7 +98,12 @@ const Home = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className="flex flex-col bg-none lg:bg-[url('../../public/designer_1.png')] lg:bg-no-repeat lg:h-dvh lg:bg-right lg:bg-contain">
+      <div
+        style={{
+          backgroundImage: `url(${designerImg})`,
+        }}
+        className={`flex flex-col lg:bg-no-repeat lg:h-dvh lg:bg-right lg:bg-contain`}
+      >
         <NavBar />
 
         {/* Introduce Your Product Quickly & Effectively*/}
@@ -123,9 +128,6 @@ const Home = () => {
                 onClick={() => {}}
               />
             </div>
-          </div>
-          <div className="md:mt-14 lg:hidden ">
-            <img src={designerImg} className="object-contain" />
           </div>
         </div>
       </div>
