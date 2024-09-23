@@ -1,4 +1,3 @@
-import React from "react";
 import Button from "./Button";
 import facebook from "../assets/facebook.jpg";
 import linkedin from "../assets/linkedin.jpg";
