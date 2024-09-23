@@ -1,9 +1,11 @@
 import { useState } from "react";
 import Button from "./Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import burgerBar from "../assets/burger-bar.png";
 
 const NavBar = () => {
+  const navigate = useNavigate();
+
   // state use to open and close full screen div as nav bar for mobile screen
   const [isOpen, setIsOpen] = useState(false);
 
@@ -20,17 +22,22 @@ const NavBar = () => {
             <Link to="/">Home</Link>
           </div>
           <div className="px-3 lg:px-6">
-            <Link to="/">About</Link>
+            <Link to="/about">About</Link>
           </div>
           <div className="px-3 lg:px-6">
-            <Link to="/">Contact</Link>
+            <Link to="/contact">Contact</Link>
           </div>
         </div>
         <div>
           <h1 className="text-xl text-[#37447E] font-extrabold">Landing</h1>
         </div>
         <div>
-          <Button btnLabel="Buy Now" onClick={() => {}} />
+          <Button
+            btnLabel="Buy Now"
+            onClick={() => {
+              navigate("/no-data");
+            }}
+          />
         </div>
       </div>
 
@@ -68,12 +75,12 @@ const NavBar = () => {
             </Link>
           </div>
           <div className="px-3 lg:px-6">
-            <Link to="/" onClick={toggleMenu}>
+            <Link to="/about" onClick={toggleMenu}>
               About
             </Link>
           </div>
           <div className="px-3 lg:px-6">
-            <Link to="/" onClick={toggleMenu}>
+            <Link to="/contact" onClick={toggleMenu}>
               Contact
             </Link>
           </div>
@@ -83,7 +90,12 @@ const NavBar = () => {
             </Link>
           </div>
           <div className="mt-6">
-            <Button btnLabel="Buy Now" onClick={() => {}} />
+            <Button
+              btnLabel="Buy Now"
+              onClick={() => {
+                navigate("/no-data");
+              }}
+            />
           </div>
         </div>
       </div>

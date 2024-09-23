@@ -41,7 +41,7 @@ const homeSectionData = [
     ),
   },
   {
-    title: "Light, Fast & Powerful",
+    title: "Section two of Light, Fast",
     description: (
       <p>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
@@ -56,7 +56,7 @@ const homeSectionData = [
     isImgAtStart: true,
   },
   {
-    title: "Light, Fast & Powerful",
+    title: "Section three of Light, Fast",
     description: (
       <p>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
@@ -71,7 +71,7 @@ const homeSectionData = [
     isImgAtStart: true,
   },
   {
-    title: "Light, Fast & Powerful",
+    title: "Section 4 Light, Powerful",
     description: (
       <p>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
@@ -125,7 +125,9 @@ const Home = () => {
               <Button
                 btnLabel="Learn More"
                 customTailwindStyle="text-[black] bg-[white] border-2"
-                onClick={() => {}}
+                onClick={() => {
+                  navigate("/no-data");
+                }}
               />
             </div>
           </div>
@@ -168,7 +170,12 @@ const Home = () => {
         </p>
 
         <p className="mt-14 mb-2 text-[#5D6970]">See, One price. Simple.</p>
-        <Button btnLabel="Purchase Now" onClick={() => {}} />
+        <Button
+          btnLabel="Purchase Now"
+          onClick={() => {
+            navigate("/no-data");
+          }}
+        />
 
         {/* Feature Section */}
         <p className="mt-10 mb-4 text-[#5D6970]">Checkout our Features</p>

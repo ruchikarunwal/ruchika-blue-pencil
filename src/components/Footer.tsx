@@ -4,14 +4,21 @@ import linkedin from "../assets/linkedin.jpg";
 import twitter from "../assets/twitter.jpg";
 import youtube from "../assets/youtube.jpg";
 import instagram from "../assets/instagram.jpg";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <div className="bg-[#E7ECFF] py-10 px-8 lg:px-40">
       <div className="flex flex-col md:flex-row gap-4 justify-between items-center">
         <p className="text-[#939EA4]">@2023 Ruchika Runwal</p>
         <p className="text-2xl font-bold text-[#37447E]">Landing</p>
-        <Button btnLabel="Purchase Now" onClick={() => {}} />
+        <Button
+          btnLabel="Purchase Now"
+          onClick={() => {
+            navigate("/no-data");
+          }}
+        />
       </div>
       <div className="border border-[#CDD1D4] mt-8 mb-4" />
       <div className="flex flex-col md:flex-row gap-4 justify-between items-center">
