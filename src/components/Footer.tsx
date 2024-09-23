@@ -12,7 +12,7 @@ const Footer = () => {
       <div className="flex flex-col md:flex-row gap-4 justify-between items-center">
         <p className="text-[#939EA4]">@2023 Ruchika Runwal</p>
         <p className="text-2xl font-bold text-[#37447E]">Landing</p>
-        <Button btnLabel="Purchase Now" />
+        <Button btnLabel="Purchase Now" onClick={() => {}} />
       </div>
       <div className="border border-[#CDD1D4] mt-8 mb-4" />
       <div className="flex flex-col md:flex-row gap-4 justify-between items-center">

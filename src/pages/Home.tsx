@@ -9,6 +9,8 @@ import NavBar from "../components/NavBar";
 import HomeSections from "../components/HomeSections";
 import DescriptionWithIcon from "../components/DescriptionWithIcon";
 import Footer from "../components/Footer";
+import { featureList } from "../utils/featureList";
+import { useNavigate } from "react-router-dom";
 
 const homeSectionData = [
   {
@@ -83,18 +85,24 @@ const homeSectionData = [
     imgUrl: imgFifth,
     isImgAtStart: true,
     descriptionFooter: (
-      <Button btnLabel="Purchase Now" customTailwindStyle="mb-4" />
+      <Button
+        btnLabel="Purchase Now"
+        customTailwindStyle="mb-4"
+        onClick={() => {}}
+      />
     ),
   },
 ];
 
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <>
-      <div className="bg-none lg:bg-[url('../../public/designer_1.png')] lg:bg-no-repeat lg:h-dvh lg:bg-right lg:bg-contain">
+      <div className="flex flex-col bg-none lg:bg-[url('../../public/designer_1.png')] lg:bg-no-repeat lg:h-dvh lg:bg-right lg:bg-contain">
         <NavBar />
+
         {/* Introduce Your Product Quickly & Effectively*/}
-        <div className="flex flex-col-reverse md:flex-row gap-6 px-8 lg:px-40 py-10 lg:py-20">
+        <div className="flex flex-col-reverse md:flex-row gap-6 px-8 lg:px-40 py-6 lg:py-20">
           <div className="flex flex-col gap-8 lg:w-[45%] lg:pt-20">
             <p className="text-3xl lg:text-5xl text-[#091133]">
               Introduce Your Product Quickly & Effectively
@@ -108,10 +116,11 @@ const Home = () => {
               pretium quis, sem. Nulla consequat massa quis enim.
             </p>
             <div className="flex gap-8">
-              <Button btnLabel="Purchase UI Kit" />
+              <Button btnLabel="Purchase UI Kit" onClick={() => {}} />
               <Button
                 btnLabel="Learn More"
-                customTailwindStyle="bg-[white] text-black border-2"
+                customTailwindStyle="text-[black] bg-[white] border-2"
+                onClick={() => {}}
               />
             </div>
           </div>
@@ -141,7 +150,7 @@ const Home = () => {
         style={{
           backgroundImage: `url(${Rectangle})`,
         }}
-        className="flex flex-col h-dvh w-full object-cover items-center justify-center"
+        className="flex flex-col w-full pb-10 object-cover items-center justify-center"
       >
         <p className="text-2xl md:text-3xl font-bold text-[#091133] my-3 mt-12">
           A Price To Suit Everyone
@@ -157,7 +166,22 @@ const Home = () => {
         </p>
 
         <p className="mt-14 mb-2 text-[#5D6970]">See, One price. Simple.</p>
-        <Button btnLabel="Purchase Now" />
+        <Button btnLabel="Purchase Now" onClick={() => {}} />
+
+        {/* Feature Section */}
+        <p className="mt-10 mb-4 text-[#5D6970]">Checkout our Features</p>
+        <div className="flex flex-col md:flex-row gap-3 md:gap-6 justify-evenly">
+          {featureList.map((feature) => {
+            return (
+              <Button
+                btnLabel={`Feature-${feature.featureId}`}
+                onClick={() => {
+                  navigate(`/feature/${feature.featureId}`);
+                }}
+              />
+            );
+          })}
+        </div>
       </div>
 
       {/* Footer */}
