@@ -1,4 +1,3 @@
-import React from "react";
 import designerImg from "../../public/designer_1.png";
 import imgThird from "../assets/img_3.jpg";
 import imgFourth from "../assets/img_4.jpg";
@@ -12,6 +11,7 @@ import Footer from "../components/Footer";
 import { featureList } from "../utils/featureList";
 import { useNavigate } from "react-router-dom";
 
+// const use to store sections data on home screen other than hero section
 const homeSectionData = [
   {
     title: "Light, Fast & Powerful",
@@ -152,7 +152,7 @@ const Home = () => {
         }}
         className="flex flex-col w-full pb-10 object-cover items-center justify-center"
       >
-        <p className="text-2xl md:text-3xl font-bold text-[#091133] my-3 mt-12">
+        <p className="text-2xl md:text-3xl font-bold text-[#091133] my-3 mt-28">
           A Price To Suit Everyone
         </p>
         <p className="text-[16px] text-center font-[400] text-[#6F7CB2] w-[80%] md:w-[38%]">

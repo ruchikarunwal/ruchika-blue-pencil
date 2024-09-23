@@ -1,5 +1,3 @@
-import React from "react";
-
 const HomeSections = ({
   title,
   description,
@@ -12,7 +10,9 @@ const HomeSections = ({
   description: JSX.Element | null;
   descriptionFooter?: JSX.Element;
   imgUrl: string;
+  // prop use to store boolean value which decide whether img is at start of row or not
   isImgAtStart?: boolean;
+  // prop use to pass custom style for outer container (div) of the component
   containerStyle?: string;
 }) => {
   return (

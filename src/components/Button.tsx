@@ -3,8 +3,11 @@ const Button = ({
   customTailwindStyle,
   onClick,
 }: {
+  // prop use to pass label of button
   btnLabel: string;
+  // prop use to pass custom style for the button
   customTailwindStyle?: string;
+  // prop use to pass on click handler for button
   onClick: () => void;
 }) => {
   return (

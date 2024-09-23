@@ -1,7 +1,11 @@
 import React from "react";
 
 const NoPageFound = () => {
-  return <div>NoPage</div>;
+  return (
+    <div className="flex h-screen justify-center items-center text-2xl">
+      NoPage
+    </div>
+  );
 };
 
 export default NoPageFound;

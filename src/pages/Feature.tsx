@@ -1,4 +1,3 @@
-import React from "react";
 import { useParams } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import { featureList } from "../utils/featureList";
@@ -6,12 +5,15 @@ import HomeSections from "../components/HomeSections";
 import DescriptionWithIcon from "../components/DescriptionWithIcon";
 
 const Feature = () => {
+  // extracting param from the react router useParam hook
   const { id } = useParams();
-  const featureData = featureList.find((ele) => ele.featureId === Number(id));
-  return (
-    <div>
-      <NavBar />
 
+  // const to store the feature data based on feature id param
+  const featureData = featureList.find((ele) => ele.featureId === Number(id));
+
+  return (
+    <div className="flex flex-col">
+      <NavBar />
       {featureData ? (
         <div className="h-full md:h-[98vh] overflow-hidden mb-10">
           <HomeSections

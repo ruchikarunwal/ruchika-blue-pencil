@@ -5,7 +5,9 @@ const DescriptionWithIcon = ({
   title,
   description,
 }: {
+  // prop store title
   title: string;
+  // prop to store description
   description: string;
 }) => {
   return (
